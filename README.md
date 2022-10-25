@@ -1,2 +1,2 @@
-# RPredicting wage of player
+# Predicting wage of player
 

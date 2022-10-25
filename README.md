@@ -1,2 +1,2 @@
-# RGB-D-image-in-3D
-Computational Imaging
+# RPredicting wage of player
+

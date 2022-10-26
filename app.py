@@ -1,3 +1,4 @@
+import time
 import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn.metrics import mean_absolute_error
@@ -7,7 +8,7 @@ from category_encoders import OneHotEncoder
 from sklearn.pipeline import make_pipeline
 from sklearn.linear_model import LinearRegression, Ridge
 from PIL import Image
-
+import loaders as hc
 
 def wrangle(filepath):
     # Read CSV file
@@ -87,6 +88,8 @@ st.title('Predicting wage of player By Their Nationality')
 nation = df['Nationality']
 nations = st.selectbox('Nations', nation)
 if st.button('Get Prediction By The Nation!'):
+    with hc.HyLoader('LOADING', hc.Loaders.standard_loaders, index=[2, 2, 2, 2]):
+        time.sleep(4)
     t = (make_prediction(nations))
     st.write(t)
     image = Image.open('download.png')
@@ -145,7 +148,7 @@ full_names = df1['Full Name']
 full_name = st.selectbox('Full Name', full_names)
 
 if st.button('Get Prediction By The Footballers Name !'):
+    with hc.HyLoader('Now doing loading', hc.Loaders.standard_loaders, index=5):
+        time.sleep(4)
     t = (make_prediction1(full_name))
     st.write(t)
-    image = Image.open('download.png')
-    st.image(image, caption='Count of players by Nationality')

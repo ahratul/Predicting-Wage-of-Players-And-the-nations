@@ -43,7 +43,7 @@ print("Mean apt price: ", y_mean)
 print("Baseline MAE: ", mean_absolute_error(y_train, y_pred_baseline))
 
 model = make_pipeline(
-    OneHotEncoder(use_cat_names=True),
+    OneHotEncoder(handle_unknown='ignore'),
     Ridge()
 )
 model.fit(X_train, y_train)
@@ -108,7 +108,7 @@ y_mean1 = y_train1.mean()
 y_pred_baseline1 = [y_mean1] * len(y_train1)
 
 model = make_pipeline(
-    OneHotEncoder(use_cat_names=True),
+    OneHotEncoder(handle_unknown='ignore'),
     Ridge()
 )
 model.fit(X_train1, y_train1)

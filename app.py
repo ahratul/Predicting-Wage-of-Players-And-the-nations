@@ -9,6 +9,8 @@ from sklearn.pipeline import make_pipeline
 from sklearn.linear_model import LinearRegression, Ridge
 from PIL import Image
 import loaders as hc
+import base64
+
 
 def wrangle(filepath):
     # Read CSV file
@@ -138,7 +140,7 @@ def make_prediction1(full_name):
     mean_wage1 = df_nation1['Wage(in Euro)'].mean().round(2)
 
     r = (f"Predicted wage of a player with {full_name}  is: {prediction1} Euro/ week",
-            f"Mean wage of players with {full_name} F is: {mean_wage1} Euro/ week")
+         f"Mean wage of players with {full_name} F is: {mean_wage1} Euro/ week")
 
     return r
 
@@ -153,5 +155,16 @@ if st.button('Get Prediction By The Footballers Name !'):
     t = (make_prediction1(full_name))
     st.write(t)
 
+file_ = open("giphy.gif", "rb")
+contents = file_.read()
+data_url = base64.b64encode(contents).decode("utf-8")
+file_.close()
 
-st.markdown("![Alt Text](https://giphy.com/gifs/uefa-ucl-2021-2022-DLpWL4BD2KgTKfPDoN)")
+st.markdown(
+    f'<img src="data:image/gif;base64,{data_url}" alt="cat gif">',
+    unsafe_allow_html=True,
+)
+
+
+
+st.write("(giphy.gif)")

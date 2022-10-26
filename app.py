@@ -152,3 +152,6 @@ if st.button('Get Prediction By The Footballers Name !'):
         time.sleep(4)
     t = (make_prediction1(full_name))
     st.write(t)
+
+
+st.markdown("![Alt Text](https://giphy.com/gifs/uefa-ucl-2021-2022-DLpWL4BD2KgTKfPDoN)")

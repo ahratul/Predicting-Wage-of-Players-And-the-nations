@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 from sklearn.metrics import mean_absolute_error
 from sklearn.model_selection import train_test_split
 import streamlit as st
-from category_encoders import OneHotEncoder
+from sklearn.preprocessing import OneHotEncoder
 from sklearn.pipeline import make_pipeline
 from sklearn.linear_model import LinearRegression, Ridge
 from PIL import Image

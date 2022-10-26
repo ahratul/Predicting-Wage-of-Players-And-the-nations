@@ -84,7 +84,7 @@ def make_prediction(nationality):
     return d
 
 
-st.title('Predicting wage of player By Their Nationality')
+st.title('Predicting wage of player By Their Nationality , The Data is taken from Fifa 23 Players Data')
 nation = df['Nationality']
 nations = st.selectbox('Nations', nation)
 if st.button('Get Prediction By The Nation!'):
